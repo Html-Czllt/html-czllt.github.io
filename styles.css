@@ -8,25 +8,38 @@ body {
 
 
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #2c2c2c; /* Fundo de elementos secundários */
+    color: #f5f5f5; /* Texto secundário e cabeçalhos */
     padding: 20px;
     text-align: center;
 }
-
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Adiciona flex-wrap para permitir que os itens quebrem linha */
 }
 
 .logo img {
     border-radius: 50%;
     box-shadow: #002fffad 0px 0px 20px;
-    max-width: 100px;
+    width: 100px;
     height: auto;
     margin-left: 20%;
+}
+
+/* Media query para telas menores */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column; /* Altera a direção do flex para coluna em telas menores */
+        align-items: center; /* Centraliza os itens na coluna */
+    }
+    
+    .logo img {
+        margin-left: 0; /* Remove a margem à esquerda */
+        margin-bottom: 20px; /* Adiciona margem inferior para separar a logo dos botões */
+    }
 }
 
 nav {
@@ -188,7 +201,7 @@ main {
     }
 
     .logo img {
-        width: 60px;
+        width: 50px;
     }
 
     .quadrado, .quadrado1, .retangular {
@@ -299,9 +312,3 @@ footer {
     }
 }
 
-@media (max-width: 600px) {
-    .card-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-}
