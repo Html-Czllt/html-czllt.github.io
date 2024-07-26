@@ -108,94 +108,74 @@ nav a.button.button5:hover { background-color: #555; color: #ff0000 ; }
 
 main {
     padding: 20px;
+    background-color: #ffffff; /* Fundo principal */
+    color: #311414; /* Texto principal */
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
+.main-content {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+ 
 }
 
-.row {
+.card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 20px; /* Espaçamento entre os cards */
+    justify-content: center; /* Alinha os cards horizontalmente */
 }
 
-.quadrado, .quadrado1, .retangular {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #000;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
+.card {
+    perspective: 1000px;
+    width: 300px; /* Ajuste conforme necessário */
+    height: 200px; /* Ajuste conforme necessário */
 }
 
-.quadrado:hover, .quadrado1:hover, .retangular:hover {
-    transition: transform 0.3s, box-shadow 0.3s;
-    transform: translateY(-10px);
-    box-shadow: #b3b3b3 0px 6px 1px;
-}
-
-.quadrado h2, .quadrado1 h2, .retangular h2 {
-    color: #000;
-    text-align: center;
-}
-
-.quadrado p, .quadrado1 p, .retangular p {
-    color: #000;
-    margin: 0;
-}
-
-.text-container {
+.card-inner {
     position: relative;
-    max-height: 80px;
-    overflow: visible;
-}
-
-.toggle {
-    display: none;
-}
-
-.toggle-label {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateX(180deg); /* Efeito flip */
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card-front {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: gray solid 1px;
+}
+
+.card-back {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateX(180deg);
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 5px;
-    cursor: pointer;
 }
 
-.toggle:checked ~ .text {
-    max-height: none;
+.card-image {
+    width: 100%;
+    height: auto;
 }
 
-.toggle:checked ~ .toggle-label {
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-
-    .row {
-        flex-direction: column;
-    }
-
-    .logo img {
-        width: 60px;
-    }
-
-    .quadrado, .quadrado1, .retangular {
-        flex: 1 0 auto;
-        margin-bottom: 20px;
-    }
-}
 
 footer {
     background-color: #333;
