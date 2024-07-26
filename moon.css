@@ -1,0 +1,304 @@
+body {
+    background-color: #1e1e1e; /* Fundo escuro */
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0; /* Texto claro */
+    font-size: 18px;
+}
+
+header {
+    background-color: #2c2c2c; /* Fundo escuro */
+    color: #f5f5f5; /* Texto claro */
+    padding: 20px;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    border-radius: 50%;
+    box-shadow: #002fffad 0px 0px 20px;
+    max-width: 100px;
+    height: auto;
+    margin-left: 20%;
+}
+
+nav {
+    text-align: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown button {
+    margin: 5px;
+    padding: 10px 15px;
+    color: #e0e0e0; /* Texto claro */
+    font-size: 18px;
+    background-color: #333; /* Fundo escuro */
+    text-decoration: none;
+    border: 2px solid #333; /* Borda escura */
+    border-radius: 5px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.dropdown-content {
+    display: block; /* Sempre exibe o menu para transição */
+    max-height: 0; /* Começa com altura zero */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa o max-height */
+    position: absolute;
+    background-color: #2c2c2c; /* Fundo escuro */
+    border: 1px solid #444; /* Borda escura */
+    min-width: 160px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    z-index: 1;
+    border-radius: 4px;
+    transition: max-height 0.8s ease, opacity 0.8s ease; /* Transições para altura máxima e opacidade */
+    opacity: 0; /* Começa invisível */
+}
+
+.dropdown-content a {
+    color: #e0e0e0; /* Texto claro */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #444; /* Cor ao passar o mouse sobre o link */
+}
+
+.dropdown:hover .dropdown-content {
+    max-height: 300px; /* Altura máxima para o menu visível */
+    opacity: 1; /* Torna o menu visível */
+}
+
+.dropdown:hover button {
+    background-color: #555; /* Cor do botão ao passar o mouse */
+    color: #77bcc5; /* Texto claro */
+}
+
+nav a.button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    color: #e0e0e0; /* Texto claro */
+    background-color: #333; /* Fundo escuro */
+    text-decoration: none;
+    border: 2px solid #333; /* Borda escura */
+    border-radius: 5px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+nav a.button.button1:hover { background-color: #555; color: #976dbe; }
+nav a.button.button2:hover { background-color: #555; color: #71b86b; }
+nav a.button.button3:hover { background-color: #555; color: #bd9d6d; }
+nav a.button.button4:hover { background-color: #555; color: #bec46f; }
+
+main {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.quadrado, .quadrado1, .retangular {
+    flex: 1;
+    background-color: #2c2c2c; /* Fundo escuro */
+    padding: 20px;
+    border: 1px solid #444; /* Borda escura */
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.quadrado:hover, .quadrado1:hover, .retangular:hover {
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: translateY(-10px);
+    box-shadow: #444 0px 6px 1px;
+}
+
+.quadrado h2, .quadrado1 h2, .retangular h2 {
+    color: #e0e0e0; /* Texto claro */
+    text-align: center;
+}
+
+.quadrado p, .quadrado1 p, .retangular p {
+    color: #e0e0e0; /* Texto claro */
+    margin: 0;
+}
+
+.text-container {
+    position: relative;
+    max-height: 80px;
+    overflow: visible;
+}
+
+.toggle {
+    display: none;
+}
+
+.toggle-label {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.toggle:checked ~ .text {
+    max-height: none;
+}
+
+.toggle:checked ~ .toggle-label {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    .quadrado, .quadrado1, .retangular {
+        flex: 1 0 auto;
+        margin-bottom: 20px;
+    }
+}
+
+footer {
+    background-color: #2c2c2c; /* Fundo escuro */
+    color: #f5f5f5; /* Texto claro */
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5px;
+    padding: 0 10px;
+}
+
+.footer-section {
+    flex: 1 0 300px;
+    max-width: 300px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+    color: #f5f5f5; /* Texto claro */
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #f5f5f5; /* Texto claro */
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section p {
+    margin: 0;
+}
+
+.footer-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Ajuste conforme necessário */
+    height: 100px;
+    background-color: #2c2c2c;
+    padding: 10px;
+    margin: 20px;
+}
+
+.footer-image img {
+    width: 160px;
+    margin: 0 5px;
+    background-color: #2c2c2c; /* Fundo da imagem */
+    border: #444 solid 2px; /* Borda escura */
+    border-radius: 6px;
+    padding: 2px;
+    margin-right: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1e1e1e; /* Fundo escuro */
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        flex: 1 0 auto;
+        max-width: none;
+    }
+
+    .footer-images-container {
+        width: auto; /* Permite que o contêiner se ajuste */
+    }
+}
+
+@media (max-width: 768px) {
+    .social-icons li {
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

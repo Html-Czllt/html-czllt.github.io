@@ -1,0 +1,287 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Fundo cinza claro */
+    font-size: 22px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    border-radius: 50%;
+    box-shadow: #002fffad 0px 0px 20px;
+    max-width: 100px;
+    height: auto;
+    margin-left: 20%;
+}
+
+
+nav {
+    text-align: center;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/*Estilo padrão do botão*/
+.dropdown button {
+    margin: 5px;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 22px;
+    background-color: #333;
+    text-decoration: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+/* Estilo do menu dropdown */
+.dropdown-content {
+    display: block; /* Sempre exibe o menu para transição */
+    max-height: 0; /* Começa com altura zero */
+    overflow: hidden; /* Oculta o conteúdo que ultrapassa o max-height */
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid black;
+    min-width: 160px;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    z-index: 1;
+    border-radius: 4px;
+    transition: max-height 0.8s ease, opacity 0.8s ease; /* Transições para altura máxima e opacidade */
+    opacity: 0; /* Começa invisível */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #afafafb2; /* Cor ao passar o mouse sobre o link */
+}
+
+/* Mostrar o menu ao passar o mouse sobre o botão */
+.dropdown:hover .dropdown-content {
+    max-height: 300px; /* Altura máxima para o menu visível */
+    opacity: 1; /* Torna o menu visível */
+}
+
+.dropdown:hover button {
+    background-color: #555; color: lightskyblue; /* Cor do botão ao passar o mouse */
+}
+
+nav a.button {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a.button.button1:hover { background-color: #555; color: #00e1ff; }
+nav a.button.button2:hover { background-color: #555; color: #15ff00; }
+nav a.button.button3:hover { background-color: #555; color: #ffee00; }
+nav a.button.button4:hover { background-color: #555; color: #000000 ; }
+nav a.button.button5:hover { background-color: #555; color: #ff0000 ; }
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card-content {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border: 3px solid #333;
+    border-radius: 10px;
+    margin-right: 20px;
+    perspective: 1000px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Move o card 10px para cima */
+    box-shadow: 9px 9px 5px rgb(114, 111, 111); /* Adiciona sombra */
+}
+
+
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.card-front {
+    background-color: #fff;
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.card-text {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5px;
+    padding: 0 10px;
+}
+
+.footer-section {
+    flex: 1 0 300px;
+    max-width: 300px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+        list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section p {
+    margin: 0;
+}
+
+.footer-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Ajuste conforme necessário */
+    height: 100px;
+    background-color: #333;
+    padding: 10px;
+    margin: 20px;
+}
+
+.footer-image img {
+    width: 160px;
+    margin-right: 5px;
+    background-color: #fff;
+    border: #000 solid 2px;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: rgb(31, 29, 29);
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        flex: 1 0 auto;
+        max-width: none;
+    }
+
+    .footer-images-container {
+        width: auto; /* Permite que o contêiner se ajuste */
+    }
+}
+
+@media (max-width: 768px) {
+    .social-icons li {
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        flex-direction: column;
+                align-items: stretch;
+    }
+}
