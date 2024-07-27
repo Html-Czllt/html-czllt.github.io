@@ -1,19 +1,20 @@
+/* Estilos gerais do site */
 body {
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
     color: #333;
     font-size: 18px;
+    transition: background-color 0.3s, color 0.3s;
 }
-
 
 header {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
+    transition: background-color 0.3s;
 }
-
 
 .header-container {
     display: flex;
@@ -32,16 +33,18 @@ header {
 nav {
     text-align: center;
 }
+
 .dropdown {
     position: relative;
     display: inline-block;
 }
-/*Estilo padrão do botão*/
-.dropdown button {
+
+/* Estilo padrão do botão */
+.dropdown button, 
+nav a.button {
     margin: 5px;
     padding: 10px 15px;
     color: #fff;
-    font-size: 18px;
     background-color: #333;
     text-decoration: none;
     border: 2px solid #333;
@@ -49,12 +52,11 @@ nav {
     transition: background-color 0.5s, color 0.5s;
 }
 
-
 /* Estilo do menu dropdown */
 .dropdown-content {
-    display: block; /* Sempre exibe o menu para transição */
-    max-height: 0; /* Começa com altura zero */
-    overflow: hidden; /* Oculta o conteúdo que ultrapassa o max-height */
+    display: block;
+    max-height: 0;
+    overflow: hidden;
     position: absolute;
     background-color: #ffffff;
     border: 1px solid black;
@@ -62,8 +64,8 @@ nav {
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
     z-index: 1;
     border-radius: 4px;
-    transition: max-height 0.8s ease, opacity 0.8s ease; /* Transições para altura máxima e opacidade */
-    opacity: 0; /* Começa invisível */
+    transition: max-height 0.8s ease, opacity 0.8s ease;
+    opacity: 0;
 }
 
 .dropdown-content a {
@@ -74,61 +76,49 @@ nav {
 }
 
 .dropdown-content a:hover {
-    background-color: #afafafb2; /* Cor ao passar o mouse sobre o link */
+    background-color: #afafafb2;
 }
 
 /* Mostrar o menu ao passar o mouse sobre o botão */
 .dropdown:hover .dropdown-content {
-    max-height: 300px; /* Altura máxima para o menu visível */
-    opacity: 1; /* Torna o menu visível */
+    max-height: 300px;
+    opacity: 1;
 }
 
 .dropdown:hover button {
-    background-color: #555; color: lightskyblue; /* Cor do botão ao passar o mouse */
+    background-color: #555; color: lightskyblue;
 }
 
-/*Estilo padrão do botão*/
-nav a.button {
-    display: inline-block;
-    margin: 5px;
-    padding: 10px 15px;
-    color: #fff;
-    background-color: #333;
-    text-decoration: none;
-    border: 2px solid #333;
-    border-radius: 5px;
-    transition: background-color 0.5s, color 0.5s;
-}
-/*Estilo hover do botão*/
+/* Estilo do botão com efeito hover */
 nav a.button.button1:hover { background-color: #555; color: #00e1ff; }
 nav a.button.button2:hover { background-color: #555; color: #15ff00; }
 nav a.button.button3:hover { background-color: #555; color: #ffee00; }
-nav a.button.button4:hover { background-color: #555; color: #000000 ; }
-nav a.button.button5:hover { background-color: #555; color: #ff0000 ; }
+nav a.button.button4:hover { background-color: #555; color: #000000; }
+nav a.button.button5:hover { background-color: #555; color: #ff0000; }
 
 main {
     padding: 20px;
-    background-color: #ffffff; /* Fundo principal */
-    color: #311414; /* Texto principal */
+    background-color: #ffffff;
+    color: #311414;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .main-content {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
- 
 }
 
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Espaçamento entre os cards */
-    justify-content: center; /* Alinha os cards horizontalmente */
+    gap: 20px;
+    justify-content: center;
 }
 
 .card {
     perspective: 1000px;
-    width: 300px; /* Ajuste conforme necessário */
-    height: 200px; /* Ajuste conforme necessário */
+    width: 300px;
+    height: 200px;
 }
 
 .card-inner {
@@ -140,7 +130,7 @@ main {
 }
 
 .card:hover .card-inner {
-    transform: rotateX(180deg); /* Efeito flip */
+    transform: rotateX(180deg);
 }
 
 .card-front, .card-back {
@@ -158,10 +148,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: gray solid 1px;
+    border: solid black 2px;
 }
 
 .card-back {
+    border: solid black 2px;
     background-color: #333;
     color: #fff;
     display: flex;
@@ -186,7 +177,6 @@ main {
     height: auto;
     transform: scaleX(-1);
 }
-
 
 footer {
     background-color: #333;
@@ -214,7 +204,7 @@ footer {
 }
 
 .footer-section ul {
-        list-style: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -239,7 +229,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px; /* Ajuste conforme necessário */
+    width: 300px;
     height: 100px;
     background-color: #333;
     padding: 10px;
@@ -278,7 +268,7 @@ footer {
     }
 
     .footer-images-container {
-        width: auto; /* Permite que o contêiner se ajuste */
+        width: auto;
     }
 }
 
@@ -295,4 +285,64 @@ footer {
         flex-direction: column;
         align-items: stretch;
     }
+}
+
+/* Modo Escuro */
+.darkmode-toggle {
+    display: none;
+}
+
+.darkmode-label {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.darkmode-toggle:checked ~ body {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.darkmode-toggle:checked ~ header {
+    background-color: #2c2c2c;
+}
+
+.darkmode-toggle:checked ~ main {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.darkmode-toggle:checked ~ footer {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.darkmode-toggle:checked ~ nav a.button {
+    background-color: #555;
+    color: #e0e0e0;
+}
+
+.darkmode-toggle:checked ~ .dropdown button {
+    background-color: #555;
+    color: #e0e0e0;
+}
+
+.darkmode-toggle:checked ~ .dropdown-content {
+    background-color: #333;
+    border: 1px solid #555;
+}
+
+.darkmode-toggle:checked ~ .dropdown-content a {
+    color: #e0e0e0;
+}
+
+.darkmode-toggle:checked ~ .card-back {
+    background-color: #444;
+    color: #e0e0e0;
 }
