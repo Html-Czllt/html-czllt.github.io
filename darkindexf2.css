@@ -127,17 +127,17 @@ main {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 100px; /* Espaçamento entre os cards */
+    gap: 90px; /* Espaçamento entre os cards */
     justify-content: center; /* Alinha os cards horizontalmente */
     margin-bottom: 2%;
     margin-top: 1%;
-    font-size: 22px;
+    font-size: 26px;
 }
 
 .card {
     perspective: 1000px;
-    width: 300px; /* Ajuste conforme necessário */
-    height: 200px; /* Ajuste conforme necessário */
+    width: 360px; /* Ajuste conforme necessário */
+    height: 260px; /* Ajuste conforme necessário */
 }
 
 .card-inner {
@@ -182,13 +182,13 @@ main {
 }
 
 
-.card-image1 img {
-    width: 100%;
+.card-image1  {
+    width: 150%;
     height: auto;
 }
 
 .card-image2 {
-    width: 118%;
+    width: 130%;
     height: auto;
 }
 
