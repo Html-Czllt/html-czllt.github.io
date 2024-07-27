@@ -171,9 +171,20 @@ main {
     text-align: center;
 }
 
-.card-image {
+.card-image1 img {
     width: 100%;
     height: auto;
+}
+
+.card-image2 {
+    width: 118%;
+    height: auto;
+}
+
+.card-image3 {
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1);
 }
 
 
