@@ -133,6 +133,8 @@ main {
     flex-wrap: wrap;
     gap: 100px; /* Espaçamento entre os cards */
     justify-content: center; /* Alinha os cards horizontalmente */
+    margin-bottom: 2%;
+    margin-top: 1%;
 }
 
 .card {
@@ -149,9 +151,12 @@ main {
     transform-style: preserve-3d;
 }
 
+
+
 .card:hover .card-inner {
-    transform: rotateX(180deg); /* Efeito flip */
+    transform: rotateX(180deg); 
 }
+
 
 .card-front, .card-back {
     position: absolute;
@@ -168,7 +173,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: gray solid 1px;
+    border: rgb(0, 0, 0) solid 1px;
 }
 
 .card-back {
