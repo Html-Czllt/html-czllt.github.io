@@ -136,8 +136,8 @@ main {
 
 .card {
     perspective: 1000px;
-    width: 300px; /* Ajuste conforme necessário */
-    height: 200px; /* Ajuste conforme necessário */
+    width: 330px; /* Ajuste conforme necessário */
+    height: 230px; /* Ajuste conforme necessário */
 }
 
 .card-inner {
@@ -188,7 +188,7 @@ main {
 }
 
 .card-image2 {
-    width: 118%;
+    width: 124%;
     height: auto;
 }
 
