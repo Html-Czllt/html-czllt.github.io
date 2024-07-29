@@ -1,5 +1,5 @@
 body {
-    background-color: #ffffff;
+    background-color: #F5FFFA;
     margin: 0;
     padding: 0;
     color: #333;
@@ -26,10 +26,16 @@ header {
 
 .logo img {
     border-radius: 50%;
-    box-shadow: #f8f9ffad 0px 0px 20px;
+    box-shadow: #f8f9ffad 0px 0px 10px;
+    transition: 0.5s;
     width: 35%;
     height: auto;
     margin: 0 auto; /* Ajustado para centralizar horizontalmente */
+}
+
+.logo img:hover {
+    transition: 0.5s;
+    box-shadow: #f8f9ffad 0px 0px 20px;
 }
 
 @media (max-width: 768px) {
@@ -66,12 +72,11 @@ nav {
 }
 
 .dropdown-content {
-    display: none; /* Inicialmente oculto */
+    display: none;    
     position: absolute;
-    background-color: #ffffff;
-    border: 1px solid black;
+    border: black solid 1px;
+    background-color: #F5FFFA;
     min-width: 160px;
-    box-shadow: 0px 0px 10px rgb(0, 0, 0);
     z-index: 1;
     border-radius: 4px;
 }
@@ -119,13 +124,13 @@ main {
 
 /* Estilo para a caixa de informações */
 .info-box {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #F5FFFA;
+    border: 2px solid #ddd;
     border-radius: 8px;
     padding: 20px;
     margin: 20px auto; /* Auto margin para centralizar horizontalmente */
     margin-bottom: 10%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.466);
     width: calc(100% - 40px); /* Subtrai a margem para garantir que não ultrapasse a tela */
     box-sizing: border-box;
     max-width: 1000px; /* Limite de largura máxima para melhor visualização */
@@ -260,6 +265,7 @@ main {
     height: auto;
     margin-bottom: 20px;
     border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.5s;
 }
 
 .image-above-text:hover {
@@ -305,11 +311,12 @@ main {
 
     .row {
         flex-direction: column;
-      width: 100%;
+        width: 100%;
     }
 
     .logo img {
         width: 50%;
+        margin: 10%;
     }
 
     .quadrado, .quadrado1 {
@@ -410,7 +417,7 @@ footer {
 
 .social-icons a {
     color: #f5f5f5;
-    font-size: 24px;
+    font-size: 18px;
     text-decoration: none;
 }
 
