@@ -305,6 +305,7 @@ main {
 
     .row {
         flex-direction: column;
+      width: 100%;
     }
 
     .logo img {
