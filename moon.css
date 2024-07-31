@@ -1,3 +1,8 @@
+html{
+    scroll-behavior: smooth;
+}
+
+
 /* Estilos para Dark Mode */
 body {
     background-color: #333; /* Fundo escuro */
@@ -449,4 +454,25 @@ footer {
         text-align: center;
     }
 
+}
+
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+    color: #fff;
 }

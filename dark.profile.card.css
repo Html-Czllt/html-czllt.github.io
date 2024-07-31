@@ -1,0 +1,62 @@
+/* profile.card.css */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #121212; /* Cor de fundo escura */
+}
+
+img {
+    transition: transform 0.3s, box-shadow 0.5s;
+    border-radius: 50%;
+    width: 43%;
+    box-shadow: -3px -3px 10px rgba(0, 183, 255, 0.7), 
+                3px 3px 10px rgba(0, 255, 106, 0.7); /* Sombra clara para imagem */
+}
+
+img:hover {
+    box-shadow: -3px -3px 10px rgba(140, 222, 255, 0.7), 
+                3px 3px 10px rgba(140, 255, 188, 0.7); /* Sombra clara ao passar o mouse */
+    cursor: pointer;
+}
+
+.profile-card {
+    position: relative;
+    width: 300px;
+    padding: 20px;
+    background: #1e1e1e; /* Cor de fundo do card escura */
+    border-radius: 10px;
+    box-shadow: rgba(124, 124, 124, 0.7) 0px 0px 20px; /* Sombra escura ao redor do card */
+}
+
+.profile-header {
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #333; /* Borda clara para a imagem no tema escuro */
+}
+
+.profile-body {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.profile-name {
+    font-size: 1.5em;
+    color: #ffffff; /* Cor do texto do nome em branco */
+    margin: 0;
+}
+
+.profile-bio {
+    font-size: 1em;
+    color: #b0b0b0; /* Cor do texto da bio em cinza claro */
+}
