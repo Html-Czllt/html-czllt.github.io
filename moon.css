@@ -378,17 +378,18 @@ footer {
 
 .footer-image {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centraliza horizontalmente */
     align-items: center;
-    width: 300px;
-    height: 100px;
+   
+    height: auto; /* Ajusta a altura conforme o conteúdo */
     padding: 10px;
-    margin: 20px auto; /* Ajustado para centralizar horizontalmente */
+    margin: 10px auto; /* Centraliza horizontalmente */
+    gap: 10px; /* Espaço entre as imagens */
 }
 
 .footer-image img {
-    width: 160px;
-    margin-right: 5px;
+ 
+    height: auto;
     background-color: #fff;
     border: #000 solid 2px;
     border-radius: 6px;
@@ -398,7 +399,7 @@ footer {
 .footer-bottom {
     text-align: center;
     padding: 10px 0;
-    background-color: rgb(31, 29, 29);
+    background-color: rgb(22, 21, 21);
     margin-top: 20px;
 }
 
@@ -454,7 +455,21 @@ footer {
         text-align: center;
     }
 
+    .faep {
+        width: 35%;
+    }
+
+    .moreli {
+        width: 15%;
+    }
+
+    .pr{
+        width: 35%;
+    }
+
+
 }
+
 
 #backToTopBtn {
     position: fixed;

@@ -143,7 +143,7 @@ main {
 
 /* Estilo para o título dos tópicos */
 .info-box h3 {
-    font-size: 2.3em; /* Aumentado de 1.9em para 2.3em */
+    font-size: 2em; /* Aumentado de 1.9em para 2.3em */
     margin-bottom: 10px;
     color: #333;
     text-align: center;
@@ -357,7 +357,6 @@ footer {
 
 .footer-section h3 {
     margin-bottom: 10px;
-    font-size: 26px; /* Aumentado de 22px para 26px */
 }
 
 .footer-section ul {
@@ -372,7 +371,6 @@ footer {
 .footer-section ul li a {
     color: white;
     text-decoration: none;
-    font-size: 26px; /* Aumentado de 22px para 26px */
 }
 
 .footer-section ul li a:hover {
@@ -381,23 +379,23 @@ footer {
 
 .footer-section p {
     margin: 0;
-    font-size: 26px; /* Aumentado de 22px para 26px */
 }
 
 .footer-image {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centraliza horizontalmente */
     align-items: center;
-    width: 300px;
-    height: 100px;
+   
+    height: auto; /* Ajusta a altura conforme o conteúdo */
     background-color: #333;
     padding: 10px;
-    margin: 20px auto; /* Ajustado para centralizar horizontalmente */
+    margin: 10px auto; /* Centraliza horizontalmente */
+    gap: 10px; /* Espaço entre as imagens */
 }
 
 .footer-image img {
-    width: 160px;
-    margin-right: 5px;
+ 
+    height: auto;
     background-color: #fff;
     border: #000 solid 2px;
     border-radius: 6px;
@@ -413,7 +411,6 @@ footer {
 
 .footer-bottom p {
     margin: 0;
-    font-size: 26px; /* Aumentado de 22px para 26px */
 }
 
 .social-icons {
@@ -430,7 +427,7 @@ footer {
 
 .social-icons a {
     color: #f5f5f5;
-    font-size: 26px; /* Aumentado de 22px para 26px */
+    font-size: 18px;
     text-decoration: none;
 }
 
@@ -463,6 +460,20 @@ footer {
         margin: 10px 0;
         text-align: center;
     }
+
+    .faep {
+        width: 35%;
+    }
+
+    .moreli {
+        width: 15%;
+    }
+
+    .pr{
+        width: 35%;
+    }
+
+
 }
 
 #backToTopBtn {
