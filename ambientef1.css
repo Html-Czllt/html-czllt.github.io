@@ -1,13 +1,18 @@
+html {
+    scroll-behavior: smooth; /* Adiciona rolagem suave */
+}
+
 body {
+    background-color: #F5FFFA;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8; /* Fundo cinza claro */
-    font-size: 22px;
+    color: #333;
+    font-size: 22px; /* Aumentado de 18px para 22px */
 }
 
 header {
-    background-color: #2c2c2c; /* Fundo de elementos secundários */
-    color: #f5f5f5; /* Texto secundário e cabeçalhos */
+    background-color: #2c2c2c;
+    color: #f5f5f5;
     padding: 20px;
     text-align: center;
 }
@@ -16,44 +21,53 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Adiciona flex-wrap para permitir que os itens quebrem linha */
+    flex-wrap: wrap;
+}
+
+.header-container img {
+    width: 100%;
 }
 
 .logo img {
     border-radius: 50%;
-    box-shadow: #002fffad 0px 0px 20px;
-    width: 100px;
+    box-shadow: #f8f9ffad 0px 0px 10px;
+    transition: 0.5s;
+    width: 35%;
     height: auto;
-    margin-left: 20%;
+    margin: 0 auto; /* Ajustado para centralizar horizontalmente */
 }
 
-/* Media query para telas menores */
+.logo img:hover {
+    transition: 0.5s;
+    box-shadow: #f8f9ffad 0px 0px 20px;
+}
+
 @media (max-width: 768px) {
     .header-container {
-        flex-direction: column; /* Altera a direção do flex para coluna em telas menores */
-        align-items: center; /* Centraliza os itens na coluna */
+        flex-direction: column;
+        align-items: center;
     }
-    
+
     .logo img {
-        margin-left: 0; /* Remove a margem à esquerda */
-        margin-bottom: 20px; /* Adiciona margem inferior para separar a logo dos botões */
+        margin: 0 auto; /* Ajustado para centralizar horizontalmente */
+        width: 50%; /* Ajuste de largura para telas menores */
     }
 }
-
 
 nav {
     text-align: center;
 }
+
 .dropdown {
     position: relative;
     display: inline-block;
 }
-/*Estilo padrão do botão*/
+
 .dropdown button {
     margin: 5px;
     padding: 10px 15px;
-    color: #fff;
-    font-size: 22px;
+    color: #f5f5f5;
+    font-size: 22px; /* Aumentado de 18px para 22px */
     background-color: #333;
     text-decoration: none;
     border: 2px solid #333;
@@ -61,20 +75,14 @@ nav {
     transition: background-color 0.5s, color 0.5s;
 }
 
-/* Estilo do menu dropdown */
 .dropdown-content {
-    display: block; /* Sempre exibe o menu para transição */
-    max-height: 0; /* Começa com altura zero */
-    overflow: hidden; /* Oculta o conteúdo que ultrapassa o max-height */
+    display: none;    
     position: absolute;
-    background-color: #ffffff;
-    border: 1px solid black;
+    border: black solid 1px;
+    background-color: #F5FFFA;
     min-width: 160px;
-    box-shadow: 0px 0px 10px rgb(0, 0, 0);
     z-index: 1;
     border-radius: 4px;
-    transition: max-height 0.8s ease, opacity 0.8s ease; /* Transições para altura máxima e opacidade */
-    opacity: 0; /* Começa invisível */
 }
 
 .dropdown-content a {
@@ -85,17 +93,15 @@ nav {
 }
 
 .dropdown-content a:hover {
-    background-color: #afafafb2; /* Cor ao passar o mouse sobre o link */
+    background-color: #afafafb2;
 }
 
-/* Mostrar o menu ao passar o mouse sobre o botão */
 .dropdown:hover .dropdown-content {
-    max-height: 300px; /* Altura máxima para o menu visível */
-    opacity: 1; /* Torna o menu visível */
+    display: block; /* Mostra o dropdown ao passar o mouse */
 }
 
 .dropdown:hover button {
-    background-color: #555; color: lightskyblue; /* Cor do botão ao passar o mouse */
+    background-color: #555; color: lightskyblue;
 }
 
 nav a.button {
@@ -107,88 +113,228 @@ nav a.button {
     text-decoration: none;
     border: 2px solid #333;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.5s, color 0.5s;
 }
 
 nav a.button.button1:hover { background-color: #555; color: #00e1ff; }
 nav a.button.button2:hover { background-color: #555; color: #15ff00; }
 nav a.button.button3:hover { background-color: #555; color: #ffee00; }
-nav a.button.button4:hover { background-color: #555; color: #000000 ; }
-nav a.button.button5:hover { background-color: #555; color: #ff0000 ; }
+nav a.button.button4:hover { background-color: #555; color: #000000; }
+nav a.button.button5:hover { background-color: #555; color: #ff0000; }
 
 main {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.card-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.card-content {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 20px;
-}
-
-.card {
-    position: relative;
-    width: 320px;
-    height: 320px;
-    border: 3px solid #333;
-    border-radius: 10px;
-    margin-right: 20px;
-    perspective: 1000px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s; /* Transição suave */
-}
-
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-.card:hover {
-    transform: translateY(-10px); /* Move o card 10px para cima */
-    box-shadow: 9px 9px 5px rgb(114, 111, 111); /* Adiciona sombra */
-}
-
-
-.card-front {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.card-front {
-    background-color: #fff;
-}
-
-.card-front img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-.card-text {
-    flex: 1;
+/* Estilo para a caixa de informações */
+.info-box {
+    background-color: #F5FFFA;
+    border: 2px solid #ddd;
+    border-radius: 8px;
     padding: 20px;
-    background-color: #fff;
-    border: 2px solid #333;
+    margin: 20px auto; /* Auto margin para centralizar horizontalmente */
+    margin-bottom: 10%;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.466);
+    width: calc(100% - 40px); /* Subtrai a margem para garantir que não ultrapasse a tela */
+    box-sizing: border-box;
+    max-width: 1000px; /* Limite de largura máxima para melhor visualização */
+}
+
+/* Estilo para o título dos tópicos */
+.info-box h3 {
+    font-size: 1.83em; /* Aumentado de 1.5em para 1.83em */
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+
+/* Estilo para a navegação dos tópicos */
+.topics-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo para cada item da lista */
+.topics-nav ul li {
+    margin: 10px 0;
+}
+
+/* Estilo para os links dos tópicos */
+.topics-nav ul li a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 22px; /* Aumentado de 18px para 22px */
+}
+
+/* Estilo para os links dos tópicos ao passar o mouse */
+.topics-nav ul li a:hover {
+    background-color: #e2e6ea;
+    color: #003d73;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.quadrado, .quadrado1 {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 8px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    transition: transform 0.3s, box-shadow 0.5s;
+    margin: 1%;
+    text-align: center;
+}
+
+.quadrado:hover {
+    transform: translateY(-10px);
+    box-shadow: #b3b3b3 0px 6px 1px;
+}
+
+.quadrado h2 {
+    color: #000;
+    text-align: center;
+    font-size: 22px; /* Aumentado de 18px para 22px */
+}
+
+.quadrado p {
+    color: #000;
+    margin: 0;
+    font-size: 22px; /* Aumentado de 18px para 22px */
+}
+
+.quadrado1 img {
+    width: 100%;
     border-radius: 10px;
+}
+
+.quadrado1 {
+    position: relative;
+    display: inline-block;
+    padding: 0px;
+    border: none;
+}
+
+.quadrado1 img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.quadrado1:hover {
+    transform: translateY(0px);
+    box-shadow: 0px 0px 15px rgb(0, 0, 0);
+}
+
+.text-container {
+    position: relative;
+    max-height: 80px;
+    overflow: visible;
+}
+
+.container222 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-above-text {
+    width: 70%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    transition: transform 0.3s, box-shadow 0.5s;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0),
+    -5px -5px 10px rgb(73, 73, 73);
+    transition: transform 0.5s;
+}
+
+.image-above-text:hover {
+    transform: scale(1.07);
+    transition: transform 0.5s;
+}
+
+.text-section222 {
+    flex: 1;
+    margin: 10px;
+}
+
+.toggle {
+    display: none;
+}
+
+.toggle-label {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.toggle:checked ~ .text {
+    max-height: none;
+}
+
+.toggle:checked ~ .toggle-label {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .logo img {
+        width: 50%;
+        margin: 10%;
+    }
+
+    .quadrado, .quadrado1 {
+        flex: 1 0 auto;
+        margin-bottom: 20px;
+    }
 }
 
 footer {
@@ -214,10 +360,11 @@ footer {
 
 .footer-section h3 {
     margin-bottom: 10px;
+    font-size: 22px; /* Aumentado de 18px para 22px */
 }
 
 .footer-section ul {
-        list-style: none;
+    list-style: none;
     padding: 0;
 }
 
@@ -228,6 +375,7 @@ footer {
 .footer-section ul li a {
     color: white;
     text-decoration: none;
+    font-size: 22px; /* Aumentado de 18px para 22px */
 }
 
 .footer-section ul li a:hover {
@@ -236,22 +384,24 @@ footer {
 
 .footer-section p {
     margin: 0;
+    font-size: 22px; /* Aumentado de 18px para 22px */
 }
 
 .footer-image {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centraliza horizontalmente */
     align-items: center;
-    width: 300px; /* Ajuste conforme necessário */
-    height: 100px;
+   
+    height: auto; /* Ajusta a altura conforme o conteúdo */
     background-color: #333;
     padding: 10px;
-    margin: 20px;
+    margin: 10px auto; /* Centraliza horizontalmente */
+    gap: 10px; /* Espaço entre as imagens */
 }
 
 .footer-image img {
-    width: 160px;
-    margin-right: 5px;
+ 
+    height: auto;
     background-color: #fff;
     border: #000 solid 2px;
     border-radius: 6px;
@@ -267,6 +417,30 @@ footer {
 
 .footer-bottom p {
     margin: 0;
+    font-size: 22px; /* Aumentado de 18px para 22px */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+    gap: 15px;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons a {
+    color: #f5f5f5;
+    font-size: 22px; /* Aumentado de 18px para 22px */
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #929292;
+    transition: 0.5s;
 }
 
 @media (max-width: 768px) {
@@ -281,21 +455,49 @@ footer {
     }
 
     .footer-images-container {
-        width: auto; /* Permite que o contêiner se ajuste */
+        width: auto;
     }
-}
 
-@media (max-width: 768px) {
+    .social-icons {
+        justify-content: center;
+    }
+
     .social-icons li {
         width: 100%;
         margin: 10px 0;
         text-align: center;
     }
+
+    .faep {
+        width: 35%;
+    }
+
+    .moreli {
+        width: 15%;
+    }
+
+    .pr{
+        width: 35%;
+    }
 }
 
-@media (max-width: 600px) {
-    .card-container {
-        flex-direction: column;
-                align-items: stretch;
-    }
+#backToTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2c2c2c;
+    color: #f5f5f5;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 22px; /* Aumentado de 18px para 22px */
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+    color: #fff;
 }
