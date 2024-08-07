@@ -113,12 +113,16 @@ nav a.button {
     display: inline-block;
     margin: 5px;
     padding: 10px 15px;
-    color: #e0e0e0; /* Texto claro */
+    color: #e4e4e4; /* Texto claro */
     background-color: #333; /* Fundo do botão escuro */
     text-decoration: none;
     border: 2px solid #333; /* Borda escura */
     border-radius: 5px;
     transition: background-color 0.5s, color 0.5s;
+}
+
+nav a.button1{
+    color: #00e1ff;
 }
 
 nav a.button.button1:hover { background-color: #555; color: #00e1ff; }

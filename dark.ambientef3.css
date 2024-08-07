@@ -107,6 +107,10 @@ nav {
     color: #e0e0e0; /* Texto do botão ao passar o mouse */
 }
 
+nav a.button.button2{
+    color: #15ff00;
+}
+
 nav a.button {
     display: inline-block;
     margin: 5px;

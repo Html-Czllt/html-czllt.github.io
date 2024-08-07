@@ -121,6 +121,10 @@ nav a.button {
     transition: background-color 0.5s, color 0.5s;
 }
 
+nav a.button3{
+    color: #ffee00;
+}
+
 nav a.button.button1:hover { background-color: #555; color: #00e1ff; }
 nav a.button.button2:hover { background-color: #555; color: #15ff00; }
 nav a.button.button3:hover { background-color: #555; color: #ffee00; }
