@@ -117,7 +117,7 @@ nav a.button {
     transition: background-color 0.5s, color 0.5s;
 }
 
-nav a.button1{
+nav a.button.button1{
     color: #00e1ff;
 }
 
